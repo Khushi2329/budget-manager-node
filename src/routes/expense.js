@@ -9,7 +9,6 @@ const isAuth = require("../middleware/middleware");
 expensesDataRouter.post("/expenses", isAuth, async (req, res) => {
   console.log(req.body);
   let expenses = new expensesModel(req.body);
- 
 
   expenses
     .save()
@@ -24,7 +23,9 @@ expensesDataRouter.post("/expenses", isAuth, async (req, res) => {
 // GET
 
 expensesDataRouter.get("/expenses", isAuth, async (req, res) => {
-  let data = await expensesModel.find({});
+  let name = req.query.whoAdded;
+
+  let data = await expensesModel.find({ whoAdded: name });
   res.send({ data: data });
 });
 
