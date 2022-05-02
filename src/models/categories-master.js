@@ -2,9 +2,6 @@ const mongoose = require("mongoose");
 
 const categoryMasterSchema = new mongoose.Schema(
   {
-    code: {
-      type: String,
-    },
     name: {
       type: String,
     },
@@ -12,6 +9,9 @@ const categoryMasterSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const categoryMaster = mongoose.model("categories-master", categoryMasterSchema);
+const categoryMaster = mongoose.model(
+  "categories-master",
+  categoryMasterSchema
+);
 
 module.exports = categoryMaster;
