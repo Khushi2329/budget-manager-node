@@ -25,9 +25,20 @@ expensesDataRouter.post("/expenses", isAuth, async (req, res) => {
 expensesDataRouter.get("/expenses/:whoAdded", isAuth, async (req, res) => {
   let name = req.params.whoAdded;
 
-  console.log("name",name)
+  console.log("name", name);
 
   let data = await expensesModel.find({ whoAdded: name });
+  res.send({ data: data });
+});
+
+expensesDataRouter.post("/expenses/custom", isAuth, async (req, res) => {
+  
+  let data = await expensesModel.find({
+    amount: req.body.amount,
+    category: req.body.category,
+    whoAdded: req.body.whoAdded,
+    whatAdded: req.body.whatAdded
+  });
   res.send({ data: data });
 });
 
