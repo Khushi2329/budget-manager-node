@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 mongoose
   .connect(
-    "mongodb+srv://Gour0992:Gour0992@cluster0.o7whp.mongodb.net/budget-manager?retryWrites=true&w=majority",
+    "mongodb://localhost:27017/myDatabaseName",
     {
       useNewUrlParser: true,
       useCreateIndex: true,

@@ -1,9 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const userModal = require("./../models/users");
-const bcrypt = require("bcryptjs");
+const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
 const isAuth = require("../middleware/middleware");
+const bodyParser = require("body-parser")
+router.use(bodyParser.urlencoded({ extended:true}))
+
 
 router.post("/signup", async (req, res) => {
   console.log(req.body);

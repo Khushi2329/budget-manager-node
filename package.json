@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines": { 
+  "engines": {
     "node": "16.13.0",
-     "npm": "8.1.0"
-     },
-
-
+    "npm": "8.1.0"
+  },
   "scripts": {
     "dev": "nodemon node src/index.js",
     "start": "node src/index.js"
@@ -16,7 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
